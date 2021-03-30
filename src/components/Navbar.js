@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import "./Navbar.css"
+import '../App.css'
 const Navbar = () => {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
