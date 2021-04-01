@@ -1,40 +1,23 @@
-import React from 'react'
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Particles from "react-particles-js"
-import Navbar from './components/Navbar';
-import Header from "./components/Header"
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+
 function App() {
-    return (
-        <>
-            <Particles
-                className="particle-canvas"
-                params={{
+  return (
+    <>
+      <Router>
+        <Navbar />
 
-                    particles: {
-                        number: {
-                            value: 30,
-                            density: {
-                                enable: true,
-                                value_area: 900
-                            }
-                        },
-                        shape: {
-                            type: "star",
-                            stroke: {
-                                width: 10,
-                                color: "f9ab00"
-
-                            }
-                        }
-                    }
-
-                }}
-
-            />
-            <Navbar />
-            <Header />
-        </>
-    )
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
 export default App;
